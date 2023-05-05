@@ -12,7 +12,6 @@ public interface WebDriverConfig extends Config {
     String getBrowser();
 
     @Key("browserVersion")
-    @DefaultValue("100.0")
     String getBrowserVersion();
 
     @Key("browserSize")

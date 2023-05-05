@@ -15,6 +15,7 @@ public class WebDriverProvider {
         Configuration.browserVersion = WebDriverProvider.config.getBrowserVersion();
         Configuration.browserSize = WebDriverProvider.config.getBrowserSize();
         Configuration.baseUrl = WebDriverProvider.config.getBaseUrl();
+        Configuration.pageLoadStrategy = "eager";
 
         if (config.isRemote()) {
             Configuration.remote = WebDriverProvider.config.getRemoteUrl();
