@@ -22,7 +22,7 @@ public class RandomRegistrationTestData {
     public static String phone = phoneNumberWithSymbols.replaceAll("[^\\d]", "").substring(1);
 
     static Date randomDateOfBirth = new Faker().date().birthday();
-    public static String dayOfBirth = new SimpleDateFormat("d").format(randomDateOfBirth),
+    public static String dayOfBirth = new SimpleDateFormat("dd").format(randomDateOfBirth),
             monthOfBirth = new SimpleDateFormat("MMMM", Locale.ENGLISH).format(randomDateOfBirth),
             yearOfBirth = new SimpleDateFormat("yyyy").format(randomDateOfBirth);
 
