@@ -1,18 +1,19 @@
 package com.github.egosteva.tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.github.egosteva.config.WebDriverProvider;
 import com.github.egosteva.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import static com.github.egosteva.config.WebDriverProvider.config;
+
 public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        WebDriverProvider.config();
+        config();
     }
 
     @BeforeEach
@@ -25,6 +26,8 @@ public class TestBase {
         Attach.screenshotAs("Last step screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo();
+        if(config.isRemote()) {
+            Attach.addVideo();
+        }
     }
 }
